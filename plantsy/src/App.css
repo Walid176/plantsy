@@ -1,0 +1,96 @@
+#header{
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  color: green;
+  text-align: center;
+}
+#add-form{
+  background-color: rgb(186, 237, 186);
+  height: 100px;
+}
+#plant-form {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+  align-items: center;
+}
+
+
+#plant-form input {
+  flex: 1;
+  padding: 10px;
+  border: 1px solid lightgreen;
+  border-radius: 6px;
+  font-size: 14px;
+  background-color: white;
+}
+
+
+#plant-form input[type="button"] {
+  background-color: green;
+  color: white;
+  border: none;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+
+#plant-form input[type="button"]:hover {
+  background-color: darkgreen;
+}
+#search-container {
+  background-color: #e0f7e9;
+  padding: 20px;
+  border-radius: 10px;
+  width: 400px;
+  margin-left: 30px;
+  text-align: left;
+}
+
+#search-container h2 {
+  color: green;
+  margin-bottom: 10px;
+}
+
+#search-container input {
+  width: 100%;
+  padding: 10px;
+  font-size: 14px;
+  border: 1px solid lightgreen;
+  border-radius: 6px;
+  background-color: #f0fff4;
+}
+.plant-card {
+  border: 1px solid #c8e6c9;
+  background-color: #f0fff4;
+  padding: 15px;
+  border-radius: 8px;
+  width: 200px;
+  text-align: center;
+  box-shadow: 0 0 8px rgba(0, 100, 0, 0.1);
+}
+
+.plant-card img {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 6px;
+}
+
+.plant-card h3 {
+  color: #2e7d32;
+  margin: 10px 0 5px;
+}
+
+.plant-card p {
+  color: #4caf50;
+  font-weight: bold;
+}
+
+
+
+
+
+
+
