@@ -1,34 +1,41 @@
 import React, { useState } from 'react';
 
 function PlantCard({ plant, onDelete }) {
-  const { id, image, name, price } = plant;
   const [inStock, setInStock] = useState(true);
 
-  const toggleStock = () => setInStock(prev => !prev);
+  function handleToggleStock() {
+    setInStock(!inStock);
+  }
 
-  const handleDelete = () => {
-    fetch(`http://localhost:3001/plants/${id}`, {
-      method: 'DELETE',
+  function handleDeleteClick() {
+    fetch("http://localhost:3001/plants/" + plant.id, {
+      method: "DELETE"
     })
-      .then((res) => {
+      .then(function (res) {
         if (res.ok) {
-          onDelete(id);
+          onDelete(plant.id);
         } else {
-          console.error('Failed to delete');
+          console.log("Delete failed");
         }
+      })
+      .catch(function (err) {
+        console.log("Network error:", err);
       });
-  };
+  }
 
   return (
     <div className="plant-card">
-      <img src={image} alt={name} />
-      <h3>{name}</h3>
-      <p>{price}</p>
-      <button onClick={toggleStock}>
-        {inStock ? 'In Stock' : 'Out of Stock'}
+      <img src={plant.image} alt={plant.name} />
+      <h3>{plant.name}</h3>
+      <p>{plant.price}</p>
+      <button onClick={handleToggleStock}>
+        {inStock ? "In Stock" : "Out of Stock"}
       </button>
       <br />
-      <button onClick={handleDelete} style={{ marginTop: '10px', backgroundColor: 'crimson' }}>
+      <button
+        onClick={handleDeleteClick}
+        style={{ marginTop: "10px", backgroundColor: "crimson" }}
+      >
         Delete
       </button>
     </div>
